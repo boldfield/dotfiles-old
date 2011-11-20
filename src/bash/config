@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTFILE=$DOTFILES_ROOT/tmp/history
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+
+# append to the history file, don't overwrite it
+shopt -s histappend

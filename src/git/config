@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+git_ref() {
+    ref=`git symbolic-ref -q HEAD 2>/dev/null` || return
+    echo ${ref#refs/heads/}
+}
+
+git_repo() {
+    repo=`git rev-parse --show-toplevel 2>/dev/null`
+    [ "$repo" ] && echo `basename $repo`
+}

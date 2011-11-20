@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+## Colors
+
+colors=`tput colors 2> /dev/null`
+
+if [ $? = 0 ] && [ $colors -gt 2 ]; then
+
+    export COLORS="$colors"
+
+    export CLR_END="\[\033[00m\]"
+    export CLR_NORMAL="\[\033[01;00;0m\]"
+
+    export CLR_RED="\[\033[00;31m\]"
+    export CLR_LTRED="\[\033[01;31m\]"
+
+    export CLR_BLUE="\[\033[00;34m\]"
+    export CLR_LTBLUE="\[\033[01;34m\]"
+
+    export CLR_GREEN="\[\033[0;32m\]"
+    export CLR_LTGREEN="\[\033[1;32m\]"
+
+    export CLR_PURPLE="\[\033[0;35m\]"
+    export CLR_LTPURPLE="\[\033[1;35m\]"
+
+    export CLR_CYAN="\[\033[00;36m\]"
+    export CLR_LTCYAN="\[\033[01;36m\]"
+
+    export CLR_GRAY="\[\033[01;30m\]"
+    export CLR_LTGRAY="\[\033[00;37m\]"
+
+    export CLR_YELLOW="\[\033[01;33m\]"
+
+    export CLR_BROWN="\[\033[00;33m\]"
+
+    export CLR_WHITE="\[\033[01;37m\]"
+
+fi

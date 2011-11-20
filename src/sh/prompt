@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+function ps1_main {
+    prompt="$CLR_BLUE\W$CLR_END$CLR_GRAY λ $CLR_END"
+    repo=`git_repo`
+    if [ "$repo" ]; then
+        ref=`git_ref`
+        if [ "$ref" ]; then
+            prompt="$CLR_GRAY[$CLR_END$CLR_LTRED$ref$CLR_END$CLR_GRAY]$CLR_END $prompt"
+        fi
+    fi
+    if [ "$VIRTUAL_ENV" ]; then
+        prompt="$CLR_GRAY[`basename $VIRTUAL_ENV`]$CLR_END $prompt"
+    fi
+    PS1="$prompt"
+}
+
+export PROMPT_COMMAND=ps1_main

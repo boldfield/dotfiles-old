@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+export EDITOR=vim
+export PAGER=less
+export PROJECTS=$HOME/Projects
+
+source $DOTFILES_SRC/sh/colors
+source $DOTFILES_SRC/sh/prompt

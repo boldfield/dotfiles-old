@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+alias reload='source ~/.bashrc'
+alias reset='source ~/.bashrc; clear;'
+alias up='cd ..;'
+alias up1='cd ..;'
+alias up2='cd ../../;'
+alias up3='cd ../../../;'
+alias up4='cd ../../../;'
+
+if [ $COLORS ]; then
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias ls='ls -G'
+    alias l='ls -AG'
+    alias la='ls -lhAG'
+else
+    alias l='ls -A'
+    alias la='ls -lhA'
+fi

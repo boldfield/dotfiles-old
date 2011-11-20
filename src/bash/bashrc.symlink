@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export DOTFILES_SRC="$HOME/.dotfiles/src"
+source "$DOTFILES_SRC/setup"

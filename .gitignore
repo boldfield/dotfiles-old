@@ -1,0 +1,14 @@
+*.DS_Store
+*.o
+*.pyc
+*.swo
+*.swp
+
+/backup/*
+!/backup/.gitkeep
+
+/local/*
+!/local/.gitkeep
+
+/tmp/*
+!/tmp/.gitkeep

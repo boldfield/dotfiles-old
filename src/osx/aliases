@@ -1,0 +1,8 @@
+alias desktop='cd ~/Desktop; ls;'
+alias downloads='cd ~/Desktop; ls;'
+
+alias restartapache='sudo apachectl -k restart;'
+alias stopapache='sudo apachectl -k stop;'
+alias startapache='sudo apachectl -k start;'
+
+alias hosts='sudo mvim /etc/hosts'

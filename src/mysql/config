@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# set the mysql prompt
+export MYSQL_PS1="[\D] \U\n> "

@@ -1,0 +1,11 @@
+alias gb='git br'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git co'
+alias gd='git diff'
+alias gl="git l"
+alias glg="git lg"
+alias gp='git pull'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gs='git s'
+alias gu='git-reup'
