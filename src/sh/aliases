@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 alias reload='source ~/.bashrc'
-alias reset='source ~/.bashrc; clear;'
+alias reset='source ~/.bashrc; clear; cd;'
 alias up='cd ..;'
 alias up1='cd ..;'
 alias up2='cd ../../;'
