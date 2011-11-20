@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+alias venv='[ "$VIRTUAL_ENV" ] && echo $VIRTUAL_ENV'
+alias cdvenv='[ "$VIRTUAL_ENV" ] && cd $VIRTUAL_ENV'
