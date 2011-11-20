@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 alias gb='git br'
 alias gc='git commit'
 alias gca='git commit -a'
