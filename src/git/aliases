@@ -11,3 +11,4 @@ alias gp='git pull'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gs='git s'
 alias gu='git-reup'
+alias gh='cd `git rev-parse --show-toplevel 2>/dev/null`'
