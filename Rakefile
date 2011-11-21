@@ -44,6 +44,7 @@ task :install do
     `ln -s "$PWD/#{linkable}" "#{target}"`
 
   end
+  puts 'Dotfiles installed.'
 
 end
 
@@ -69,6 +70,7 @@ task :uninstall do
     end
 
   end
+  puts 'Dotfiles uninstalled.'
 
 end
 
