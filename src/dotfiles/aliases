@@ -1,12 +1,10 @@
 #!/usr/bin/env sh
 
-alias dotinstall='cd $DOTFILES; rake install; cd -;'
-alias installdots='cd $DOTFILES; rake install; cd -;'
-alias dotupdate='cd $DOTFILES; rake uninstall; rake install; cd -;'
-alias updatedots='cd $DOTFILES; rake uninstall; rake install; cd -;'
-alias updots='cd $DOTFILES; rake update; cd -;'
-alias dotuninstall='cd $DOTFILES; rake uninstall; cd -;'
-alias rmdots='cd $DOTFILES; rake uninstall; cd -;'
+alias dotupdate='dotup'
+alias updatedots='dotup'
+alias updots='dotup'
+alias dotuninstall='dotdown'
+alias rmdots='dotdown'
 alias dot='cd $DOTFILES; ls;'
 alias dots='cd $DOTFILES_SRC; ls;'
 alias dotl='cd $DOTFILES_LOCAL; ls;'

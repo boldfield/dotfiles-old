@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+cd $DOTFILES
+
+rake uninstall
+
+err=`git pull 2>&1 1>/dev/null`
+if [ "$err" ]; then
+   echo "$err"
+   exit 1
+fi
+
+
+err=`git submodule update --init 2>&1 1>/dev/null`
+if [ "$err" ]; then
+   echo "$err"
+   exit 1
+fi
+
+rake install
