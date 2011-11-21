@@ -2,19 +2,23 @@
 
 cd $DOTFILES
 
-rake uninstall
+rake uninstall 1>/dev/null 2>/dev/null
 
 err=`git pull 2>&1 1>/dev/null`
 if [ "$err" ]; then
+   rake install 1>/dev/null 2>/dev/null
    echo "$err"
    exit 1
 fi
+echo "Source updated."
 
 
 err=`git submodule update --init 2>&1 1>/dev/null`
 if [ "$err" ]; then
+   rake install 1>/dev/null 2>/dev/null
    echo "$err"
    exit 1
 fi
+echo "Submodules updated."
 
 rake install
