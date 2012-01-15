@@ -12,12 +12,14 @@ if [ $COLORS ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    alias ls='ls -G'
-    alias l='ls -AG'
-    alias la='ls -lhAG'
+    alias ls='ls -lhAG'
+    alias l='ls -G'
 else
+    alias ls='ls -lhA'
     alias l='ls -A'
-    alias la='ls -lhA'
 fi
+alias la='ls -leO@'
+
+alias wget="curl -O"
 
 alias d='pwd'
