@@ -6,3 +6,5 @@
 *.pyc
 *.rbc
 node_modules
+/vendor/bundle/ruby/
+/.bundle
