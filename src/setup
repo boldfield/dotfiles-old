@@ -3,8 +3,12 @@
 # Use $DOTFILES_LOCAL to match the structure of $DOTFILES_SRC
 # for integration testing.
 
-export DOTFILES="$HOME/.dotfiles"
-export DOTFILES_ROOT="$HOME/.dotfiles"
+# 1. Setup environment variables and functions
+if [ -z "$DOTFILES" ]; then
+    export DOTFILES="$HOME/.dotfiles"
+fi
+
+export DOTFILES_ROOT="$DOTFILES"
 export DOTFILES_SRC="$DOTFILES_ROOT/src"
 export DOTFILES_LOCAL="$DOTFILES_ROOT/local"
 
@@ -19,7 +23,7 @@ function include {
     fi
 }
 
-# 1. Setup paths
+# 2. Setup paths
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -27,15 +31,17 @@ include "paths"
 export PATH="$DOTFILES_SRC/bin":$PATH
 export PATH="$DOTFILES_LOCAL/bin":$PATH
 
-# 2. Setup configurations
+# 3. Setup configurations
 include "config"
 
-# 3. Setup aliases
+# 4. Setup aliases
 include "aliases"
 
-# 4. Setup tab completion
+# 5. Setup tab completion
 include "completion"
 
 
-# 5. Include local configuration
-[[ -a $HOME/.localrc ]] && [ source $HOME/.localrc ]
+# 6. Include local configuration
+if [ -a $HOME/.localrc ]; then
+    source $HOME/.localrc
+fi
