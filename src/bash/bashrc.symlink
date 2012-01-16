@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 
-export DOTFILES_SRC="$HOME/.dotfiles/src"
-source "$DOTFILES_SRC/setup"
+if [ -a $HOME/.dotrc ]; then
+    source $HOME/.dotrc
+fi
+
+if [ -z "$DOTFILES" ]; then
+    export DOTFILES="$HOME/.dotfiles"
+fi
+
+if [ -f "$DOTFILES/src/setup" ]; then
+    source "$DOTFILES/src/setup"
+else
+    echo "Cannot source '$DOTFILES/src/setup'." >&2
+fi
