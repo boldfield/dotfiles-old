@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+_fab_completion() {
+    if [ -f $PWD/fabfile.py ] || [ -d $PWD/fabfile ]; then
+        local cur prev opts
+
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        prev="${COMP_WORDS[COMP_CWORD-1]}"
+        opts="$(fab --shortlist | xargs)"
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    fi
+}
+
+if [ -x `which fab` ]; then
+    complete -F _fab_completion fab
+fi
