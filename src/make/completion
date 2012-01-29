@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+_make_completion() {
+    if [ -f $PWD/Makefile ]; then
+        local cur prev opts
+
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        prev="${COMP_WORDS[COMP_CWORD-1]}"
+        opts="$(grep -E '^[a-zA-Z1-9](.+):.*$' $PWD/Makefile | sort -u | sed 's/^\(.*\):.*$/\1/' | xargs)"
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    fi
+}
+
+if [ -x `which make` ]; then
+    complete -F _make_completion make
+fi
