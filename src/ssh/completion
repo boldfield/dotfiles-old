@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-complete -W "$(grep -E '^Host [^\*]+$' ~/.ssh/config | sort -u | sed 's/Host //')" ssh
+[ -f $HOME/.ssh/config ] && complete -W "$(grep -E '^Host [^\*]+$' $HOME/.ssh/config | sort -u | sed 's/Host //')" ssh
