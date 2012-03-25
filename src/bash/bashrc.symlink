@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
-if [ -a $HOME/.dotrc ]; then
-    source $HOME/.dotrc
-fi
-
-if [ -z "$DOTFILES" ]; then
-    export DOTFILES="$HOME/.dotfiles"
-fi
+[ -a $HOME/.dotrc ] && source $HOME/.dotrc
+[ -z "$DOTFILES" ] && export DOTFILES="$HOME/.dotfiles"
 
 if [ -f "$DOTFILES/src/setup" ]; then
     source "$DOTFILES/src/setup"

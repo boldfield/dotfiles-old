@@ -4,9 +4,7 @@
 # for integration testing.
 
 # 1. Setup environment variables and functions
-if [ -z "$DOTFILES" ]; then
-    export DOTFILES="$HOME/.dotfiles"
-fi
+[ -z "$DOTFILES" ] && export DOTFILES="$HOME/.dotfiles"
 
 export DOTFILES_ROOT="$DOTFILES"
 export DOTFILES_SRC="$DOTFILES_ROOT/src"
@@ -40,8 +38,5 @@ include "aliases"
 # 5. Setup tab completion
 include "completion"
 
-
 # 6. Include local configuration
-if [ -a $HOME/.localrc ]; then
-    source $HOME/.localrc
-fi
+[ -a $HOME/.localrc ] && source $HOME/.localrc
