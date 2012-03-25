@@ -2,10 +2,11 @@
 
 ret=0
 
+[ -f "$HOME/.dotrc" ] && source $HOME/.dotrc
+
 # 1. Verify dotfiles directory doesn't exist
 dot="$DOTFILES"
 [ ! "$dot" ] && dot="$HOME/.dotfiles"
-dot="$HOME/.dotfiles"
 
 if [ -d "$dot" ]; then
     echo "Error: dotfile directory exists."
