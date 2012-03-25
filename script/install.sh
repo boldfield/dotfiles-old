@@ -58,7 +58,7 @@ fi
 # 5. Download dotfiles
 
 mkdir -p "$dot" && \
-    curl -L https://github.com/collinwat/dotfiles/tarball/master | \
+    curl -Ls https://github.com/collinwat/dotfiles/tarball/master | \
     tar -C "$dot" --strip=1 -xzf -
 
 cd "$dot" && make install
