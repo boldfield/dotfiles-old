@@ -1,6 +1,34 @@
 # Dotfiles
 
-My personal [dotfiles](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked) repo.
+## Install
 
-Hopefully the Rakefile can be turned into a Makefile at some point. I
-like those more :)
+    curl -s https://raw.github.com/collinwat/dotfiles/master/script/install.sh | sh
+
+The install process will `git clone` the project if `git` is available or
+download the project via `curl`. It will then `make` the project.
+
+## Pre-Install
+
+The default install directory is `$HOME/.dotfiles`. That path can be
+overridden in the `$HOME/.dotrc` file by defining the `DOTFILES`
+variable. For example:
+
+    DOTFILES="$HOME/path/to/dotfiles"
+
+## Pre-Requisites
+
+### Required
+
+- sh
+- mkdir
+- curl
+- make
+
+### Optional
+
+- git
+
+## TODO
+
+The bashrc flow takes too long. There should be a make recipe to combine
+all scripts into a single script to eliminate includes.
