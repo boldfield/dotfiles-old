@@ -7,19 +7,18 @@ alias up1='cd ..;'
 alias up2='cd ../../;'
 alias up3='cd ../../../;'
 alias up4='cd ../../../;'
-
-if [ $COLORS ]; then
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    alias ls='ls -lhAG'
-    alias l='ls -G'
-else
-    alias ls='ls -lhA'
-    alias l='ls -A'
-fi
-alias la='ls -leO@'
-
 alias wget="curl -O"
-
 alias d='pwd'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+IS_LS_BSD=`ls --color 2>&1 >/dev/null`
+LS_COLOR="--color=auto"
+[ "$IS_LS_BSD" ] && LS_COLOR="-G"
+
+alias ls="ls -lhA $LS_COLOR"
+alias l="ls $LS_COLOR"
+
+[ "$IS_LS_BSD" ] && alias la='ls -leO@'
