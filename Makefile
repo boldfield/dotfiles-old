@@ -11,7 +11,7 @@ BACKUPS = $(shell find backup -maxdepth 1 -type f -name "\.*" ! -name ".gitkeep"
 DOTS = $(call map, $(call links, src)) \
 		$(call map, $(call links, local))
 
-$(DOTS):
+$(DOTS)::
 	@@if [ "$(shell readlink $@)" != "$(call symlink,.,$(@F))" ]; then \
 		[ -f "$@" ] && mv $@ backup/$(@F); \
 		ln -s $(call symlink,.,$(@F)) $@; \
