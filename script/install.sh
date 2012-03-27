@@ -24,6 +24,10 @@ curl="${CURL}"
 [ -z "$curl" ] && curl=`which curl 2> /dev/null`
 [ -z "$curl" ] && echo "Error: Missing curl command" && exit 1
 
+tar="${TAR}"
+[ -z "$tar" ] && tar=`which tar 2> /dev/null`
+[ -z "$tar" ] && echo "Error: Missing tar command" && exit 1
+
 git="${GIT}"
 [ -z "$git" ] && git=`which git 2> /dev/null`
 
