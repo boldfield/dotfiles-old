@@ -2,7 +2,7 @@
 
 ## Install
 
-    curl -s https://raw.github.com/collinwat/dotfiles/master/script/install.sh | sh
+    curl -s https://raw.github.com/boldfield/dotfiles/master/script/install.sh | sh
 
 The install process will `git clone` the project if `git` is available or
 download the project via `curl`. It will then `make` the project.

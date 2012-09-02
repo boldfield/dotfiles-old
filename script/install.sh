@@ -38,10 +38,10 @@ echo "Downloading..."
 
 if [ -z "$git" ]; then
     $mkdir -p "$dot" && \
-        $curl -Ls https://github.com/collinwat/dotfiles/tarball/master | \
+        $curl -Ls https://github.com/boldfield/dotfiles/tarball/master | \
         $tar -C "$dot" --strip=1 -xzf -
 else
-    git clone https://github.com/collinwat/dotfiles.git $dot 1> /dev/null 2> /dev/null
+    git clone https://github.com/boldfield/dotfiles.git $dot 1> /dev/null 2> /dev/null
 fi
 
 

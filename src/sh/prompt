@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 
 function ps1_main {
-    prompt="$CLR_BLUE\W$CLR_END$CLR_GRAY λ $CLR_END"
+    prompt="$CLR_WHITE\h $CLR_YELLOW@$CLR_WHITE\T$CLR_END $CLR_BLUE\W$CLR_END $CLR_GRAY ℑ $CLR_END"
     repo=`git_repo`
     if [ "$repo" ]; then
         ref=`git_ref`
+        repo=`git_repo`
         if [ "$ref" ]; then
-            prompt="$CLR_GRAY[$CLR_END$CLR_LTRED$ref$CLR_END$CLR_GRAY]$CLR_END $prompt"
+            prompt="$CLR_GRAY<$CLR_LTGRAY$repo$CLR_GRAY|$CLR_LTGRAY$ref$CLR_END$CLR_GRAY>$CLR_END $prompt"
         fi
     fi
     if [ "$VIRTUAL_ENV" ]; then

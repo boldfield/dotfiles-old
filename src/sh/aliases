@@ -21,7 +21,7 @@ LS_COLOR=" --color=auto"
 LS_EXTRA=""
 [ ! "$IS_LS_BSD" ] && LS_EXTRA=" -X --group-directories-first"
 
-alias ls="ls -lhA${LS_COLOR}${LS_EXTRA}"
+alias ls="ls -lh${LS_COLOR}${LS_EXTRA}"
 alias l="ls${LS_COLOR}${LS_EXTRA}"
 
-[ "$IS_LS_BSD" ] && alias la='ls -leO@'
+[ "$IS_LS_BSD" ] && alias la='ls -lhA${LS_COLOR}${LS_EXTRA}'
