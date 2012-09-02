@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 function ps1_main {
-    prompt="$CLR_WHITE\h $CLR_YELLOW@$CLR_WHITE\T$CLR_END $CLR_BLUE\W$CLR_END $CLR_GRAY ℑ $CLR_END"
+    prompt="$CLR_WHITE\h $CLR_YELLOW@$CLR_WHITE\T$CLR_END $CLR_BLUE\W$CLR_END $CLR_GRAY ℋ  $CLR_END"
     repo=`git_repo`
     if [ "$repo" ]; then
         ref=`git_ref`
