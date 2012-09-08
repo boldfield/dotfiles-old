@@ -1,8 +1,8 @@
 [user]
-    name = Collin Watson
-    email = watson.collin@gmail.com
+    name = Brian Oldfield
+    email = brian.oldfield@gmail.com
 [github]
-    user = collinwat
+    user = boldfield
 [alias]
     amend = commit --verbose --amend
     br = branch -a
