@@ -1,0 +1,58 @@
+#!/usr/bin/env sh
+
+# Virtual Environment activation
+function activate_virtualenv {
+    if [[ -z $WORKON_HOME ]]
+    then
+        return
+    fi
+    local venv=`find $WORKON_HOME -maxdepth 1 -type d -name $1`
+    if [[ ! -z $venv ]]
+    then
+        workon $1
+    fi
+}
+
+# Navigation
+alias work='cd $HOME/Work'
+
+# Work
+## Poold
+alias pooldin='cd $HOME/Work/poold.in'
+alias pooldb='cd $HOME/Work/poold.in/pooldb;activate_virtualenv pooldb'
+alias pooldlib='cd $HOME/Work/poold.in/pooldlib;activate_virtualenv pooldlib'
+alias pooldwww='cd $HOME/Work/poold.in/pooldwww;activate_virtualenv pooldwww'
+alias poold.in='cd $HOME/Work/poold.in/poold.in;activate_virtualenv poold.in'
+alias pooldrest='cd $HOME/Work/poold.in/pooldrest;activate_virtualenv pooldrest'
+alias pooldcode='cd $HOME/Work/poold.in/pooldcode;activate_virtualenv pooldcode'
+
+## Engage
+alias btcf='cd $HOME/Work/EngageStrategy/btc-foundation;activate_virtualenv btcf'
+
+## BitInstant
+alias bi='cd $HOME/Work/BitInstant/;activate_virtualenv bi-home'
+alias bi-www='cd $HOME/Work/BitInstant/www/branches/boldfield;activate_virtualenv bi-www'
+alias btcw='cd $HOME/Work/BitInstant/bitcoinwireless;activate_virtualenv btcw'
+
+# Personal
+alias decanter='cd $HOME/Work/decanter;activate_virtualenv decanter'
+alias bottler='cd $HOME/Work/oldfield.io/bottler/bottler;activate_virtualenv bottler'
+alias oldfieldwww='cd $HOME/Work/oldfield.io/oldfieldwww;activate_virtualenv oldfieldwww'
+alias oldfield.io='cd $HOME/Work/oldfield.io/oldfield.io;activate_virtualenv oldfieldio'
+alias merrychristmaswww='cd $HOME/Work/merrychristm.as/merrychristmaswww;activate_virtualenv christmaswww'
+alias merrychristm.as='cd $HOME/Work/merrychristm.as/merrychristm.as;activate_virtualenv christm.as'
+alias resume='cd $HOME/Documents/Resume'
+alias books='cd $HOME/Work/Books/'
+
+## TopCoder
+alias tc='cd $HOME/Work/TopCoder/'
+alias ilc='cd $HOME/Work/TopCoder/ILC'
+
+# Yet to be named LLC
+alias om='cd $HOME/Work/OptionMinder;activate_virtualenv om'
+
+# oDesk
+alias solar-api='cd $HOME/Work/odesk/NealEdgeworth/SolarAPI;activate_virtualenv solar-api'
+
+# App shortcuts
+alias iphone="open $DOTFILES/src/bin/iPhone\ Simulator.app"
