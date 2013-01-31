@@ -3,12 +3,17 @@
 function ps1_main {
     prompt="$CLR_WHITE\h $CLR_YELLOW@$CLR_WHITE\t$CLR_END $CLR_BLUE\W$CLR_END $CLR_GRAY ℋ  $CLR_END"
     repo=`git_repo`
+    svn_root=`svn_root`
     if [ "$repo" ]; then
         ref=`git_ref`
         repo=`git_repo`
         if [ "$ref" ]; then
             prompt="$CLR_GRAY<$CLR_LTGRAY$repo$CLR_GRAY|$CLR_LTGRAY$ref$CLR_END$CLR_GRAY>$CLR_END $prompt"
         fi
+    elif [ "$svn_root" ]
+    then
+        svn_branc=`svn_branch`
+        prompt="$CLR_GRAY{$CLR_LTGRAY$svn_root$CLR_GRAY|$CLR_LTGRAY$svn_branc$CLR_END$CLR_GRAY}$CLR_END $prompt"
     fi
     if [ "$VIRTUAL_ENV" ]; then
         prompt="$CLR_GRAY[`basename $VIRTUAL_ENV`]$CLR_END $prompt"

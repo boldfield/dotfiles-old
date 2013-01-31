@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+svn_branch() {
+    root=`svn_root`
+    #branch=`svn info 2> /dev/null | grep URL: | sed -E 's/^URL: .*\/$root\/([^\/ ]+).*$/\1/'`
+    if [ "$root" ]
+    then
+        branch=`svn info 2> /dev/null | grep URL: | sed -E "s/^URL: .*\/${root}\/branches\/([^\/ ]+).*$/\1/"`
+        if [ "$(echo $branch | grep URL)" ]
+        then
+            branch=`svn info 2> /dev/null | grep URL: | sed -E "s/^URL: .*\/${root}\/([^\/ ]+).*$/\1/"`
+            if [ "$(echo $branch | grep URL)" ]
+            then
+                # For now make the assumption that we're in the repo root
+                branch=ROOT
+            fi
+        fi
+        echo $branch
+    fi
+}
+
+svn_root() {
+    root=`svn info 2> /dev/null | grep Root: | sed -E 's/^Repository Root: .*\/([a-z]+)$/\1/'`
+    if [ "$root" ]
+    then
+        echo $root
+    fi
+}
