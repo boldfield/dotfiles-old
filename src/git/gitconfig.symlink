@@ -1,6 +1,6 @@
 [user]
-    name = Brian Oldfield
-    email = brian.oldfield@gmail.com
+	name = Brian Oldfield
+	email = brian@oldfield.io
 [github]
     user = boldfield
 [alias]
@@ -23,9 +23,12 @@
     count   = !git shortlog -sn
 [core]
     excludesfile = ~/.gitignore
+	editor = vim -f
 [color]
     ui = true
 [apply]
     whitespace = nowarn
 [branch]
     autosetuprebase = always
+[mergetool]
+	keepBackup = true
