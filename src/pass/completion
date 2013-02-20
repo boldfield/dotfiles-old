@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+completion=/usr/local/etc/bash_completion.d/password-store
+
+if [ -f $completion ]
+then
+    source $completion
+fi
