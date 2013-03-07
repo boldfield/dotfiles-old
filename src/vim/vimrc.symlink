@@ -120,6 +120,10 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
+" Toggle spell checking
+map <Leader>h :set spell<CR>
+map <Leader>g :set nospell<CR>
+
 " Turn off folding (defaults to ON for pymode)
 let g:pymode_folding = 0
 
@@ -145,6 +149,13 @@ map <C-Tab> :tabn <CR>
 map <C-Left> :winc W<CR>
 map <C-Right> :winc w<CR>
 map <C-n><C-n> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+"""
+" Emacs/bash style shortcuts
+"""
+map <C-a> <Home>
+map <C-e> <End>
+nmap <C-k> <S-c>
 
 " GUI settings
 if has("gui_macvim") && has("gui_running")
@@ -194,4 +205,36 @@ nmap <silent> <D-D> :NERDTree<CR>
 """
 """ Markdown
 """
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+"nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>m :silent !open -a MultiMarkdown\ Composer\ -\ v2.app '%:p'<cr>
+
+"""
+""" HTML/XML
+"""
+au Filetype html,xml,xsl source ~/.vim/scripts/closetag.vim
+
+
+"""
+""" Temp Modifications
+"""
+set t_Co=256
+colorscheme zenburn
+
+"""
+" Tab completion
+"""
+ function! SuperCleverTab()
+    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+        return "\<Tab>"
+    else
+        if &omnifunc != ''
+            return "\<C-X>\<C-O>"
+        elseif &dictionary != ''
+            return "\<C-K>"
+        else
+            return "\<C-N>"
+        endif
+    endif
+endfunction
+
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>

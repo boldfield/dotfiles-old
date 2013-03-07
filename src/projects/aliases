@@ -31,7 +31,8 @@ alias btcf='cd $HOME/Work/EngageStrategy/btc-foundation;activate_virtualenv btcf
 
 ## BitInstant
 alias bi='cd $HOME/Work/BitInstant/;activate_virtualenv bi-home'
-alias bi-www='cd $HOME/Work/BitInstant/www/branches/boldfield;activate_virtualenv bi-www'
+alias bi-www='cd $HOME/Work/BitInstant/git/www;activate_virtualenv bi-www'
+alias bi-doc='cd $HOME/Documents/BitInstant'
 alias btcw='cd $HOME/Work/BitInstant/bitcoinwireless;activate_virtualenv btcw'
 
 # Personal
@@ -48,7 +49,11 @@ alias books='cd $HOME/Work/Books/'
 alias tc='cd $HOME/Work/TopCoder/'
 alias ilc='cd $HOME/Work/TopCoder/ILC'
 
-# Yet to be named LLC
+## Class
+alias class='cd $HOME/Work/Class'
+alias compilers='cd $HOME/Work/Class/Coursera/Compilers.003'
+
+# Altefeld
 alias om='cd $HOME/Work/OptionMinder;activate_virtualenv om'
 
 # oDesk
