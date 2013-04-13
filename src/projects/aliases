@@ -55,6 +55,8 @@ alias compilers='cd $HOME/Work/Class/Coursera/Compilers.003'
 
 # Altefeld
 alias om='cd $HOME/Work/OptionMinder;activate_virtualenv om'
+alias btcm='cd $HOME/Work/Altefeld/BitMarket;activate_virtualenv btcm'
+alias de='cd $HOME/Work/Altefeld/DeepEnd'
 
 # oDesk
 alias solar-api='cd $HOME/Work/odesk/NealEdgeworth/SolarAPI;activate_virtualenv solar-api'
