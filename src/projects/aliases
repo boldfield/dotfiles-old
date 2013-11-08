@@ -17,23 +17,12 @@ function activate_virtualenv {
 alias work='cd $HOME/Work'
 
 # Work
-## Poold
-alias pooldin='cd $HOME/Work/poold.in'
-alias pooldb='cd $HOME/Work/poold.in/pooldb;activate_virtualenv pooldb'
-alias pooldlib='cd $HOME/Work/poold.in/pooldlib;activate_virtualenv pooldlib'
-alias pooldwww='cd $HOME/Work/poold.in/pooldwww;activate_virtualenv pooldwww'
-alias poold.in='cd $HOME/Work/poold.in/poold.in;activate_virtualenv poold.in'
-alias pooldrest='cd $HOME/Work/poold.in/pooldrest;activate_virtualenv pooldrest'
-alias pooldcode='cd $HOME/Work/poold.in/pooldcode;activate_virtualenv pooldcode'
 
-## Engage
-alias btcf='cd $HOME/Work/EngageStrategy/btc-foundation;activate_virtualenv btcf'
-
-## BitInstant
-alias bi='cd $HOME/Work/BitInstant/;activate_virtualenv bi-home'
-alias bi-www='cd $HOME/Work/BitInstant/git/www;activate_virtualenv bi-www'
-alias bi-doc='cd $HOME/Documents/BitInstant'
-alias btcw='cd $HOME/Work/BitInstant/bitcoinwireless;activate_virtualenv btcw'
+# Socrata
+alias wal-e="cd /Users/brianoldfield/Work/third-party/wal-e;activate_virtualenv wal-e"
+alias post-review="rbt post -g --target-groups=sysadmin -p"
+alias chef-repo="cd /Users/brianoldfield/Work/Socrata/chef-repo"
+alias azure-chef-repo="cd /Users/brianoldfield/Work/Socrata/azure-chef-repo"
 
 # Personal
 alias decanter='cd $HOME/Work/decanter;activate_virtualenv decanter'

@@ -9,5 +9,8 @@ else
     echo "Cannot source '$DOTFILES/src/setup'." >&2
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
