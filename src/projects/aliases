@@ -13,16 +13,44 @@ function activate_virtualenv {
     fi
 }
 
+function check_ssl_exp() {
+  echo | openssl s_client -connect $1:443 2> /dev/null | openssl x509 -noout -dates
+}
+
+function dump_ssl_text() {
+  echo | openssl s_client -connect $1:443 2> /dev/null | openssl x509 -noout -text -certopt no_subject,no_header,no_version,no_serial,no_signame,no_validity,no_subject,no_issuer,no_pubkey,no_sigdump,no_aux
+}
+
 # Navigation
 alias work='cd $HOME/Work'
 
 # Work
+denv="eval $(dvm env)"
 
 # Socrata
-alias wal-e="cd /Users/brianoldfield/Work/third-party/wal-e;activate_virtualenv wal-e"
-alias post-review="rbt post -g --target-groups=sysadmin -p"
-alias chef-repo="cd /Users/brianoldfield/Work/Socrata/chef-repo"
-alias azure-chef-repo="cd /Users/brianoldfield/Work/Socrata/azure-chef-repo"
+alias wal-e="cd /Users/boldfield/Work/third-party/wal-e;activate_virtualenv wal-e"
+alias notadash-proj="export GOPATH=/Users/boldfield/Work/Socrata/go/notadash/.go;cd /Users/boldfield/Work/Socrata/go/notadash"
+alias go-mesos-proj="export GOPATH=/Users/boldfield/Work/Socrata/go/go-mesos/.go;cd /Users/boldfield/Work/Socrata/go/go-mesos"
+#alias post-review="rbt post -g --target-groups=sysadmin -p"
+alias chef-repo="cd /Users/boldfield/Work/Socrata/chef-repo"
+alias azure-chef-repo="cd /Users/boldfield/Work/Socrata/azure-chef-repo"
+alias data-coordinator="cd /Users/boldfield/Work/Socrata/data-coordinator"
+alias socrata-chef="cd $HOME/Work/Socrata/chef"
+alias socrata-cookbooks="cd $HOME/Work/Socrata/chef/cookbooks"
+alias metachef="cd $HOME/Work/Socrata/metachef"
+alias provisionator="cd $HOME/Work/Socrata/provisionator;activate_virtualenv provisionator"
+alias provisionatorlib="cd $HOME/Work/Socrata/provisionatorlib;activate_virtualenv provisionator"
+alias provisionator_api="cd $HOME/Work/Socrata/provisionator_api;activate_virtualenv provisionator"
+alias provisionator_dns="cd $HOME/Work/Socrata/provisionator_dns;activate_virtualenv provisionator"
+alias provisionator_chef="cd $HOME/Work/Socrata/provisionator_chef;activate_virtualenv provisionator"
+alias provisionator_globalsign_request="cd $HOME/Work/Socrata/provisionator_globalsign_request;activate_virtualenv provisionator"
+alias provisionator_globalsign_issue="cd $HOME/Work/Socrata/provisionator_globalsign_issue;activate_virtualenv provisionator"
+alias provisionator_dynect_txt_validation="cd $HOME/Work/Socrata/provisionator_dynect_txt_validation;activate_virtualenv provisionator"
+alias provisionator_keys="cd $HOME/Work/Socrata/provisionator_keys;activate_virtualenv provisionator"
+alias provisionator_chef_deploy="cd $HOME/Work/Socrata/provisionator_chef_deploy;activate_virtualenv provisionator"
+
+alias provisionator_webapp="cd $HOME/Work/Socrata/provisionator_webapp;activate_virtualenv provisionator"
+alias provisionator_adminconsole="cd $HOME/Work/Socrata/provisionator_adminconsole;activate_virtualenv provisionator"
 
 # Personal
 alias decanter='cd $HOME/Work/decanter;activate_virtualenv decanter'
@@ -33,6 +61,7 @@ alias merrychristmaswww='cd $HOME/Work/merrychristm.as/merrychristmaswww;activat
 alias merrychristm.as='cd $HOME/Work/merrychristm.as/merrychristm.as;activate_virtualenv christm.as'
 alias resume='cd $HOME/Documents/Resume'
 alias books='cd $HOME/Work/Books/'
+alias s3-encryption='cd $HOME/Work/Personal/s3-encryption;activate_virtualenv s3-encryption'
 
 ## TopCoder
 alias tc='cd $HOME/Work/TopCoder/'
@@ -52,3 +81,8 @@ alias solar-api='cd $HOME/Work/odesk/NealEdgeworth/SolarAPI;activate_virtualenv 
 
 # App shortcuts
 alias iphone="open $DOTFILES/src/bin/iPhone\ Simulator.app"
+
+# Terraform
+alias toioplan="terraform plan -var-file ~/.terraform/oldfield.io.terraform.tfvars"
+alias toioapply="terraform apply -var-file ~/.terraform/oldfield.io.terraform.tfvars"
+alias toiodestroy="terraform plan -destroy -out=destory.tfplan -var-file ~/.terraform/oldfield.io.terraform.tfvars"

@@ -14,3 +14,15 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 ### Added by the Heroku Toolbelt
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export GOPATH=~/.go
+
+### Scala
+export SCALA_HOME=/usr/local/share/scala
+PATH=$PATH:$SCALA_HOME/bin
+PATH=$PATH:$HOME/bin/packer
+PATH=$PATH:$HOME/opt/chefdk/bin
+
+export AWS_KEYPAIR_NAME=brian-socrata-laptop

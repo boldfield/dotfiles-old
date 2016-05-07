@@ -238,3 +238,9 @@ colorscheme zenburn
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/Cellar/go/1.1.2/libexec/misc/vim/
+filetype plugin indent on
+syntax on
